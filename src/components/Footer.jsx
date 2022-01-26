@@ -2,9 +2,10 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <div>
-
-    </div>
+    <footer>
+      <p>2022 Clone DINOTAENG Site.</p>
+      <p>ALL RIGHT RESERVED.</p>
+    </footer>
   );
 };
 

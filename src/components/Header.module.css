@@ -1,0 +1,58 @@
+header {
+  font-family: 'Kalam', cursive;
+  grid-column: span 2;
+  padding: 1vw;
+  text-align: center;
+  background-color: white;
+}
+
+.header__container {
+  margin: 50px auto 0;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+}
+
+header .title {
+  font-size: 3rem;
+  line-height: 4rem;
+  font-weight: bold;
+}
+
+header .subtitle {
+  margin-top: 24px;
+  font-size: 2.2rem;
+  line-height: 28px;
+  margin: 16px 0px 0px;
+  color: #555;
+  font-weight: 500;
+  vertical-align: baseline;
+}
+
+header .btn__area {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+header a {
+  display: inline-block;
+}
+
+header .btn__area button {
+  display: inline-block;
+  font-weight: 700;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: color 0.3s ease 0s, border-color 0.3s ease 0s,
+    background-color 0.3s ease 0s;
+  text-decoration: none;
+  border: 2px solid #ccab8b;
+  background-color: #ccab8b;
+  font-size: 1.4rem;
+  line-height: 22px;
+  padding: 15px 24px;
+  color: rgb(255, 255, 255) !important;
+  line-height: 22px;
+}
