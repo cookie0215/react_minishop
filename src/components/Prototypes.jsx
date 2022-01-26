@@ -1,10 +1,8 @@
-import { useContext } from 'react';
-import AppStateContext from '../contexts/AppStateContext';
 import styles from './Prototypes.module.css';
-
-// const ddd = useContext(AppStateContext);
+import usePrototypes from '../hooks/usePrototypes'
 
 const Prototypes = () => {
+  const prototypes = usePrototypes();
   return (
     <main>
       <ul className={styles['prototypes']}>
