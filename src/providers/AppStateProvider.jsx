@@ -1,9 +1,8 @@
-import { useCallback, useState } from 'react';
-import AppStateContext from '../contexts/AppStateContext';
+import { useCallback, useState } from "react";
+import AppStateContext from "../contexts/AppStateContext";
 
-
-const AppStateProvider = ({ childeren }) => {
-  const [prototypes,] = useState([
+const AppStateProvider = ({ children }) => {
+  const [prototypes] = useState([
     {
       id: "pp-01",
       title: "Marsh Fluffy Slippers",
@@ -137,28 +136,52 @@ const AppStateProvider = ({ childeren }) => {
     },
   ]);
 
-  const [orders, useOrders] = useState([]);
+  const [orders, setOrders] = useState([]);
 
   // 해당 상품이 추가될 때의 상태
-  const addToOredr = useCallback((id) => {
+  const addToOrder = useCallback((id) => {
+    // [+]버튼을 클릭했을 때, 이미 추가된 상품이면 갯수만 증가시키고, 
+    // 아예 선택한 적이 없는 상품이라면 해당 상품정보와 갯수를 추가해줘야 한다.
+    setOrders((orders) => {
+      const finded = orders.find(order => order.id === id);
 
+      // 한번도 선택한 적이 없는 상품을 추가 할 때 >> 해당 상품 데이터 정보와 갯수 추가
+      if (finded === undefined) {
+        return [...orders, { id, quantity: 1 }]
+      } else {
+        // 이미 선택되어 있는 상품을 추가할 때 >> 해당 상품 id가 있는 지 확인 후, 갯수만 증가 
+        return orders.map((order) => {
+          // 해당 상품의 아이디가 있으니, 갯수 증가
+          if (order.id === id) {
+            return {
+              id,
+              quantity: order.quantity + 1,
+            }
+          } else {
+            return order;
+          }
+        })
+      }
+    })
   }, [])
 
   // 해당 상품 선택 취소
   const remove = useCallback((id) => {
-
-  }, [])
+    setOrders((orders) => {
+      return orders.filter((order) => order.id !== id);
+    });
+  }, []);
 
   // 선택한 상품 모두 취소
   const removeAll = useCallback(() => {
-
-  }, [])
+    setOrders([]);
+  }, []);
 
   return (
     <AppStateContext.Provider
-      value={{ orders, prototypes, addToOredr, remove, removeAll }}
+      value={{ orders, prototypes, addToOrder, remove, removeAll }}
     >
-      {childeren}
+      {children}
     </AppStateContext.Provider>
   );
 };

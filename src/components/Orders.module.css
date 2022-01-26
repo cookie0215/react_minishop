@@ -1,0 +1,133 @@
+
+
+/* Orders */
+
+.order {
+  border: 0.05rem solid var(--gray);
+  border-radius: 6px;
+  display: flex;
+  display: -ms-flexbox;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background: #fff;
+}
+
+.order .total {
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding: 0.8rem;
+  font-size: 1.6rem;
+}
+
+.order .order-nav {
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.order .body {
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 0.6rem 0.8rem;
+  padding-bottom: 0;
+}
+
+
+
+/* item */
+
+.item {
+  align-content: space-between;
+  align-items: center;
+  display: flex;
+  display: -ms-flexbox;
+  -ms-flex-align: center;
+  -ms-flex-line-pack: justify;
+}
+
+.item .action {
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+
+.item .action .price {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: #fff;
+  display: inline-block;
+  line-height: 1rem;
+  outline: none;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  font-size: 1.4rem;
+  height: 2rem;
+  padding: 0.45rem 0.6rem;
+  background: transparent;
+  border-color: transparent;
+  color: var(--primary);
+  cursor: default;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.item video {
+  margin: 0.4rem 0.4rem 0.4rem 0.2rem;
+  border-radius: 4px;
+  max-width: 60px;
+}
+
+.item .content {
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+.item .title {
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  -webkit-margin-before: 0px;
+  line-height: 1rem;
+  font-size: 1.4rem;
+}
+
+.item .sold-out {
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  -webkit-margin-before: 0px;
+  line-height: 1rem;
+  font-size: 1.4rem;
+  color: var(--red-color);
+}
+
+.item.item-centered .title,
+.item.item-centered .item-subtitle {
+  margin-bottom: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* empty */
+
+.empty {
+  background-color: #fff;
+  border: 0.05rem solid #fff;
+  color: var(--primary-alpha);
+  border-radius: 6px;
+  padding: 3.2rem 1.6rem;
+  text-align: center;
+}
+
+.empty .title,
+.empty .subtitle {
+  margin: 0.8rem auto;
+}
+
+.empty .subtitle {
+  font-size: 1.2rem;
+}
